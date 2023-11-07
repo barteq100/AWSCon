@@ -3,7 +3,7 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "This template is partially managed by Amazon.Lambda.Annotations (v1.0.0.0).",
   "Resources": {
-    "AWSAnnoFunctionFunctionHandlerGenerated": {
+    "AWSWeatherFunctionFunctionHandlerGenerated": {
       "Type": "AWS::Serverless::Function",
       "Metadata": {
         "Tool": "Amazon.Lambda.Annotations",
@@ -20,7 +20,7 @@
           "AWSLambdaBasicExecutionRole"
         ],
         "PackageType": "Zip",
-        "Handler": "AWSAnno::AWSAnno.Function_FunctionHandler_Generated::FunctionHandler",
+        "Handler": "AWSWeather::AWSWeather.Function_FunctionHandler_Generated::FunctionHandler",
         "Events": {
           "RootGet": {
             "Type": "HttpApi",

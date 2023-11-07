@@ -1,16 +1,15 @@
-using Amazon.Lambda.Annotations;
 using Amazon.Lambda.Annotations.APIGateway;
+using Amazon.Lambda.Annotations;
 using Amazon.Lambda.Core;
 using SharedLib;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace AWSAnno;
+namespace AWSWeather;
 
 public class Function
 {
-
 
     /// <summary>
     /// A simple function that takes a string and returns both the upper and lower case version of the string.

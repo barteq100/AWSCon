@@ -2,7 +2,7 @@ using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
-namespace AWSAnno.Tests;
+namespace AWSWeather.Tests;
 
 public class FunctionTest
 {
@@ -13,7 +13,9 @@ public class FunctionTest
         // Invoke the lambda function and confirm the string was upper cased.
         var function = new Function();
         var context = new TestLambdaContext();
-        var forecast = function.FunctionHandler(context).ToList();
-        Assert.True(forecast.Count is > 0 and <= 5);
+        var casing = function.FunctionHandler("hello world", context);
+
+        Assert.Equal("hello world", casing.Lower);
+        Assert.Equal("HELLO WORLD", casing.Upper);
     }
 }

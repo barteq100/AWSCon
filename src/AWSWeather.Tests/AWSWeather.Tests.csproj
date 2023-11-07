@@ -12,6 +12,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AWSAnno\AWSAnno.csproj" />
+    <ProjectReference Include="..\AWSWeather\AWSWeather.csproj" />
   </ItemGroup>
 </Project>

@@ -26,15 +26,15 @@ FROM public.ecr.aws/lambda/dotnet:7 AS base
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim as build
 WORKDIR /src
-COPY ["AWSAnno.csproj", "AWSAnno/"]
-RUN dotnet restore "AWSAnno/AWSAnno.csproj"
+COPY ["AWSWeather.csproj", "AWSWeather/"]
+RUN dotnet restore "AWSWeather/AWSWeather.csproj"
 
-WORKDIR "/src/AWSAnno"
+WORKDIR "/src/AWSWeather"
 COPY . .
-RUN dotnet build "AWSAnno.csproj" --configuration Release --output /app/build
+RUN dotnet build "AWSWeather.csproj" --configuration Release --output /app/build
 
 FROM build AS publish
-RUN dotnet publish "AWSAnno.csproj" \
+RUN dotnet publish "AWSWeather.csproj" \
             --configuration Release \ 
             --runtime linux-x64 \
             --self-contained false \ 
@@ -83,12 +83,12 @@ dotnet tool update -g Amazon.Lambda.Tools
 
 Execute unit tests
 ```
-cd "AWSAnno/test/AWSAnno.Tests"
+cd "AWSWeather/test/AWSWeather.Tests"
 dotnet test
 ```
 
 Deploy function to AWS Lambda
 ```
-cd "AWSAnno/src/AWSAnno"
+cd "AWSWeather/src/AWSWeather"
 dotnet lambda deploy-function
 ```

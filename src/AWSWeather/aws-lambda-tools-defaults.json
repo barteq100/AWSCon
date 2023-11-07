@@ -7,14 +7,13 @@
   ],
   "profile": "default",
   "region": "eu-north-1",
-  "configuration": "Release",
   "s3-prefix": "WeatherForecast/",
+  "configuration": "Release",
   "package-type": "image",
-  "template": "serverless.template",
   "function-memory-size": 256,
   "function-timeout": 30,
   "function-name": "GetWeatherForecast",
   "function-role": "weatherForecasterRole",
-  "image-command": "AWSAnno::AWSAnno.Function::FunctionHandler"
-  //"docker-host-build-output-dir": "./bin/Release/lambda-publish"
+  "image-command": "AWSWeather::AWSWeather.Function::FunctionHandler",
+  "docker-host-build-output-dir": "./bin/Release/lambda-publish"
 }
